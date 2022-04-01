@@ -1,5 +1,9 @@
 데이터 시각화 R
 
+--- 
+# 내가 못외운거
+- las = "Label of Axis Style"
+
 ---
 # Week2
 
