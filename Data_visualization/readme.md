@@ -3,6 +3,9 @@
 --- 
 # 내가 못외운거
 - las = "Label of Axis Style"
+- barplot(cex.names -> 글자 크기 조정가능)
+- mtext("표시내용", side = 하좌우상-1234, line = 위치(0123), 
+           adj = 좌우로 치우침, cex = 크기, outer = 외부마진에 그릴까 말까(default = F) T일땐 oma 설정필요 
 
 ---
 # Week2
