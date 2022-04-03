@@ -71,11 +71,45 @@
     - `locator()` 사용자가 특정 위치를 마우스로 클릭하면 그 위치에 범례 생성.  (colab에서는 실행 불가.)
 
 - point()      : 지정한 좌표 위에 점을 표시
+  - 1 ~ 25 까지 정수로 표시하는 점 도형
+  - 32 ~ 127까지 정수로 표시하는 ASCII 문자
+  - 직접 입력한 문자를 출력 
 - lines()      : 두 점에 좌표를 `이어서` 선을 그리는 함수
+  - `lty` : 0 ~ 6 -> c("투명선", "실선", "대쉬선", "점선", 6에 까까워질수록 선은 길어지고 사이 점 줄어듬)
+  - 'lty` : 0 ~ 6 -> c("blank", "soild", "dashed", "dotted", "dotdash", "twodash")
+  -  `lty` 는 사용자 지정 패턴 정의가능. `lty = BW` 일 경우 black and white로 그림 
 - grid()       : 좌표평면에 격자 모양을 그리는 함수
+  - `grid(3,4)` 는 x축으로 3개의 격자를, y축으로 4개의 격자를 생성.
+  -  따라서 x축과 평행한 2개의 수직선, y축과 평행한 3개의 수평선을 그림.  grid(n,m)은 n-1개의 x축과 평행한 선, m-1개의 y축과 평행한 선을 그림.
 - `abline()`    : 직교 좌표에 그림을 그리는 함수
+  - abline(a=10, b=2) 일 경우 y = 2x + 10 인 Linear Graph를 그림.
+  - abline(h=10), same as y = 10 and abline(a=10, b=0) Draw Horizontal line `ㅡ` 
+  - abline(v=2), same as x = 2 and abline(a=0, b=2), Draw Vertical line `|`
 - `arrows()`     : 화살표를 그리는 함수
+  - (x1, y1) 과 (x2, y2)를 연결하는 화살표를 그림.
+  - angle()  : 화살표의 각도 설정. Default = 30
+  - length() : 화살표의 길이, Default = 0.25
+  - code()   : code=0 화살촉이 없음, code=1 시작점에 화살촉 존재, code=2, 끝점에 화살촉이 있음(default), code=3 시작점과 끝점에 화살촉 있음.
+  - lty, lwd, col 을 사용하여 선의 모양, 선의 굵기, 색 지정 가능.  
+  - `adj`를 사용하여 text의 위치 조정 가능.
 - `segments()`   : 점들을 그룹으로 만든 후, 각각의 그룹별로 선을 그리는 함수
-- rect()       : 사각형을 그리는 함수
+  - `Segments(x1,y1,x2, y2)` 는 점(x1, y1) 과 점(x2, y2)를 잇는 선을 넣습니다.
+  - `lwd : line width, col : color, lty : line type`
+  - (x1,y1)과 (x2, y2) 가 각각 크기가 같은 n*1 크기의 vector일 경우 각각을 잇는 line을 그림.
+- rect()       : 사각형을 그리는 함수 `(xleft, ybottom)` and `(xright, ytop)`
+  - xleft : 사각형의 왼쪽 x좌표
+  - ybottom : 사각형의 아래족 y좌표
+  - xright : 사각형의 오른쪽 x좌표
+  - ytop : 사각형의 위쪽 y좌표 
+  - col = 내부 칼라, `border` : 사각형 테두리의 칼라, 
+  - density : 사각형 안을 채우는 밀도, angle은 내부를 채우는 선의 기울기를 나타냄 (default=45)
+  - lty, lwd
 - `polygon()`    : 좌표 점들을 이어서 다각형을 그리는 함수
+  - `rect`와 동일 
 - box()        : 현재의 그래픽 장치의 특정 영역에 사각형을 그리는 함수
+  - `which = "outer"` : 그래픽 장치의 바깥쪽 
+  - `which = "inner"` : 바깥 마진의 안쪽 영역, inner와 figure는 같을수도있음 하나의 그래프에 여러개를 그리면 차이가 남.
+  - `which = "figure"` : 그림 영역의 테두리 
+  - `which = "plot"` : 플롯 영역의 테두리
+
+
