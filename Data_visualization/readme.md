@@ -12,6 +12,7 @@
 breaks = 12 # 구간을 12개로 나눔
 freq  = F   # freq = FALSE y축의 단위가 상대도수 (probability)
 freq  = T   # freq = TRUE y축의 단위가 도수
+```
 
 ## igraph
 
