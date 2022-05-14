@@ -51,3 +51,18 @@ freq  = T   # freq = TRUE y축의 단위가 도수
 
 ## 체르노프 얼굴 그림 : aplpack
 - faces 함수를 통해 그림. , type을 통해 그림 바꿀 수 있음
+
+
+# R 10주차
+- 1차원 : 벡터, 2차원 : 행렬, 3차원 : 배열
+- 행렬은 한가지 데이터 타입으로 구성, 여러가지 데이터 타입은 Data Frame
+- byrow -> row 단위로 구성, byrow의 default는 F로 col 단위로 입력이 됌.
+- 전치행렬 -> t(matrix)
+- col = rgb(1,2,3,4) -> rgb는 각각 1,2,3 투명도 4\
+
+### 리스트
+- R에서의 리스트는 keyvalue 형태
+- 이런 형태를 여러개로 만들고 싶으면 데이터 프레임으로 만듬.
+- subset(data.frame, 조건식)
+  -  조건에 맞는 답 반환.
+
