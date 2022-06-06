@@ -20,12 +20,13 @@ freq  = T   # freq = TRUE y축의 단위가 도수
 - edge.color , edge.width, edge.lty 는 알거야
 - edge.label.family   : 라벨 글자의 종류 serif, sans, mono
 - edge.label.font     : 라벨 글자의 폰트
-  - 1. 일반, 2.볼드, 3. 이탤릭, 4.볼드이탤릭.
+  -  1. 일반, 2.볼드, 3. 이탤릭, 4.볼드이탤릭.
 - edge.label.color    : 라벨의 색상
 - edge.arrow.size     : 화살의 크기 설정
 - edge.arrow.width    : 화살의 두께 설정하는 파라미터
 - edge.arrow.mode     : 화살의 머리 유형을 설정, 
   - 1 = 역방향 , 2 = 순방향(Default), 3 = 양쪽방향 화살, 4 = 화살표 없음
+  - directed = F 일경우 화살표 없음 . T는 있음.
   
 ### vertex 
 - vertex.size  : 점의 크기
@@ -37,6 +38,14 @@ freq  = T   # freq = TRUE y축의 단위가 도수
 - vertex.label.font , vertex.label.cex 
 - vertex.label.family : 점 레이블의 종류
 - vertex.label.degree : 점 레이블 방향 
+
+### Layout
+- layout.random
+- layout.circle
+- layout.kamada.kawai
+- layout.fruchterman.reingold
+- layout.lgl
+- layout.mds
 
 ## treemap
 - vSize : 면적으로 보여줄 데이터 설정
@@ -51,18 +60,34 @@ freq  = T   # freq = TRUE y축의 단위가 도수
 
 ## 체르노프 얼굴 그림 : aplpack
 - faces 함수를 통해 그림. , type을 통해 그림 바꿀 수 있음
+  - faces(face.type = 0) -> 흑백
+  - faces(face.type = 1) -> 컬러
+  - faces(face.type = 2) -> 산타
 
-
+ 
 # R 10주차
 - 1차원 : 벡터, 2차원 : 행렬, 3차원 : 배열
 - 행렬은 한가지 데이터 타입으로 구성, 여러가지 데이터 타입은 Data Frame
 - byrow -> row 단위로 구성, byrow의 default는 F로 col 단위로 입력이 됌.
-- 전치행렬 -> t(matrix)
-- col = rgb(1,2,3,4) -> rgb는 각각 1,2,3 투명도 4\
+- 전치행렬 -> `t(matrix)`
+- col = rgb(1,2,3,4) -> rgb는 각각 1,2,3 투명도 4
+- 행렬에 colnames(행렬명) <- c("name01", "name02", "name03") 을 통해 이름 지정 가능
+- 똑같이 rownames(행렬명) 을 통해 행렬의 행 이름 지정 가능
+- R의 인덱스 시작은 1부터
 
 ### 리스트
 - R에서의 리스트는 keyvalue 형태
 - 이런 형태를 여러개로 만들고 싶으면 데이터 프레임으로 만듬.
 - subset(data.frame, 조건식)
   -  조건에 맞는 답 반환.
+- 1부터 24의 숫자로 (2,3,4) 차원의 배열 만들기
+  - `array(1:24, dim = c(2,3,4))`
+
+## 시각화
+- Image() <- matrix형태의 데이터에 Image 함수를 씌우면 스칼라 값에 해당하는 사각형을 그려서 반환
+  - rainbow를 통해 사각형을 만들 수 있음.
+- persp() : 삼차원 데이터를 2차원의 x-y 평면에 투영하여 투시도를 그리는 함수
+- contour() 를 사용하여 등고선 그리기 가능
+- fill.contour() 를 사용하여 색칠된 등고선 get 가능
+- 
 
